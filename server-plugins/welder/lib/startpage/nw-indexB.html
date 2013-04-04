@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            var requirejs = require("requirejs");
+            var gui = require('nw.gui');
+            var win = gui.Window.get();
+            win.on('loaded', function() {
+                requirejs([window.global.appPath+"/build/client.js"],function(){
+                    win.appConfig.waitSeconds = 0;
+                    requirejs(win.appConfig, ["welder/welder"], function(welder) {
+                        welder.setup(win.appConfig,function(){
+                            //done
+                        });
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

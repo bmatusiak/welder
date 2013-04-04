@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <% if(locals.isBuild){ %>
+        <script src="/static/client.js"></script>
+        <script>
+            window.appConfig = JSON.parse('<%- JSON.stringify(appConfig) %>');
+            window.appConfig.isBuild = true;
+            require(window.appConfig, ["welder/welder"], function(welder) {welder.setup(window.appConfig)});
+        </script>
+        <% }else{ %>
+        <script src="/static/core/require.js"></script>
+        <script async="true">
+            window.appConfig = JSON.parse('<%- JSON.stringify(appConfig) %>');
+            window.appConfig.waitSeconds = 0;
+            require(window.appConfig, ["welder/welder"], function(welder) {
+                welder.setup(window.appConfig,function(){
+                    //done
+                });
+            });
+        </script>
+        <% } %>
+    </head>
+    <body>
+        <div id="startpage" style="text-align:center">
+            <strong>Tested Browser Compatibility</strong><br /><br />
+            
+            Microsoft Internet Explorer 9+<br />
+            Google Chrome<br />
+            Mozilla FireFox 3.5+<br /><br />
+            
+            Javascript and Cookies must be enabled to use this site.<br /><br />
+            OpenNetwork.io is tested on HTML5 enabled Web-Browsers. <br />Offering compatibility of HTML4 enabled Web-Browsers.
+            <br /><br />
+            <a href="http://en.wikipedia.org/wiki/Comparison_of_web_browsers">Comparison of Web Browsers</a>
+        </div>
+        
+    </body>
+</html>

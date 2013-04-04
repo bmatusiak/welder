@@ -1,0 +1,34 @@
+{
+    "name": "node-example",
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "3.0.x",
+        "socket.io": "*",
+        "architect": "*",
+        "ejs": "*",
+        "requirejs": "2.1.2",
+        "everyauth": "https://github.com/bmatusiak/everyauth/tarball/express3",
+        "mongoose": "3.5.3",
+        "connect": "2.7.1",
+        "request":"*",
+        "less":"*"
+    },
+    "engines": {
+        "node": "0.8.x",
+        "npm": "1.1.x"
+    },
+   "scripts": {
+        "postinstall": "node builder.js"
+    },
+    "main":"index.html",
+    "window": {
+        "title": "Sample Architect app",
+        "toolbar": true,
+        "position": "center",
+        "width": 800,
+        "height": 700,
+        "resizable": true,
+        "show": true,
+        "frame": true
+    }
+}

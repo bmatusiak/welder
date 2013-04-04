@@ -1,0 +1,27 @@
+{
+    "name": "app.main",
+    "version": "0.0.1",
+
+    "main": "./main.js",
+
+    "plugin": {
+        "provides": [
+            "main"
+        ],
+        "consumes":[
+            "welder"
+        ]
+    },
+    "client":{
+        "name": "main",
+        "version": "0.0.1",
+        "path":"./client",
+        "main": "main",
+        "namespace":"ext",
+        "plugin":{
+            "provides":[
+                "main"
+            ]
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "name": "welder",
+    "version": "0.0.1",
+
+    "main": "./welder.js",
+    "private": true,
+
+    "plugin": {
+        "provides": [
+            "welder"
+        ]
+    }
+}
